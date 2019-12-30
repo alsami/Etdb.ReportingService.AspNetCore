@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Etdb.ReportingService.Cqrs.Abstractions\Etdb.ReportingService.Cqrs.Abstractions.csproj" />
+      <ProjectReference Include="..\Etdb.ReportingService.Domain\Etdb.ReportingService.Domain.csproj" />
+      <ProjectReference Include="..\Etdb.ReportingService.Presentation\Etdb.ReportingService.Presentation.csproj" />
+      <ProjectReference Include="..\Etdb.ReportingService.Services.Abstractions\Etdb.ReportingService.Services.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>

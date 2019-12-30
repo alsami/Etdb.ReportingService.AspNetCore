@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Etdb.ReportingService.Services.Abstractions\Etdb.ReportingService.Services.Abstractions.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Autofac.Extensions.FluentBuilder" Version="2.0.1" />
+      <PackageReference Include="Microsoft.Azure.ServiceBus" Version="4.1.1" />
+    </ItemGroup>
+
+</Project>
