@@ -46,12 +46,12 @@ namespace Etdb.ReportingService.Services
             try
             {
                 await this.messageHandler(extracted);
-                await this.queueClient.CompleteAsync(message.CorrelationId);
+                await this.queueClient!.CompleteAsync(message.CorrelationId);
             }
             catch (Exception e)
             {
                 this.exceptionHandler(e);
-                await this.queueClient.DeadLetterAsync(message.CorrelationId);
+                await this.queueClient!.DeadLetterAsync(message.CorrelationId);
             }
         }
         

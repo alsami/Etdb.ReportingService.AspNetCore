@@ -4,6 +4,8 @@ using Autofac.Extensions.FluentBuilder;
 using AutoMapper.Contrib.Autofac.DependencyInjection;
 using Etdb.ReportingService.AutoMapper;
 using Etdb.ReportingService.Cqrs.Abstractions.Commands;
+using Etdb.ReportingService.Cqrs.CommandHandler;
+using Etdb.ReportingService.Modules;
 using Etdb.ReportingService.Services;
 using Etdb.ReportingService.Services.Abstractions;
 using Etdb.ReportingService.Services.Abstractions.Enums;
@@ -53,10 +55,11 @@ namespace Etdb.ReportingService
         public void ConfigureContainer(ContainerBuilder containerBuilder)
         {
             containerBuilder.AddAutoMapper(typeof(TestProfile).Assembly);
-            containerBuilder.AddMediatR(typeof(UserRegistrationStoreCommand).Assembly);
+            containerBuilder.AddMediatR(typeof(UserRegistrationStoreCommandHandler).Assembly);
             
             new AutofacFluentBuilder(containerBuilder)
-                .AddGenericAsTransient(typeof(AzureServiceBusMessageConsumer<>), typeof(IMessageConsumer<>));
+                .AddGenericAsTransient(typeof(AzureServiceBusMessageConsumer<>), typeof(IMessageConsumer<>))
+                .ApplyModule(new ResourceLockingAdapterModule(false));
 
             containerBuilder.Register<Func<MessageType, IQueueClient>>(outerComponentContext =>
                 {

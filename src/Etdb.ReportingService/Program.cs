@@ -34,11 +34,7 @@ namespace Etdb.ReportingService
 
         private static void ConfigureDelegate(HostBuilderContext context, IConfigurationBuilder configurationBuilder)
         {
-            configurationBuilder.Sources.Clear();
-
-            configurationBuilder.SetBasePath(AppContext.BaseDirectory);
-
-            configurationBuilder.AddJsonFile($"appsettings.{context.HostingEnvironment.EnvironmentName}.json");
+            configurationBuilder.AddEnvironmentVariables();
 
             if (!context.HostingEnvironment.IsDevelopment()) return;
 
