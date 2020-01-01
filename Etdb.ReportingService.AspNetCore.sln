@@ -15,6 +15,19 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Etdb.ReportingService.AutoMapper.Tests", "test\Etdb.ReportingService.AutoMapper.Tests\Etdb.ReportingService.AutoMapper.Tests.csproj", "{ED224C3D-824C-44E2-A547-D9BC5BA4E613}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{165721B1-8EDD-4922-98EB-3D63101EE623}"
+ProjectSection(SolutionItems) = preProject
+	dev_environment.md = dev_environment.md
+	global.json = global.json
+	LICENSE = LICENSE
+	publish-folder.sh = publish-folder.sh
+	run-tests.sh = run-tests.sh
+	scaffold-db.sh = scaffold-db.sh
+	setup-mongodb-user.sh = setup-mongodb-user.sh
+	watch.sh = watch.sh
+	README.md = README.md
+	.travis.yml = .travis.yml
+	.gitignore = .gitignore
+EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Etdb.ReportingService.Services.Abstractions", "src\Etdb.ReportingService.Services.Abstractions\Etdb.ReportingService.Services.Abstractions.csproj", "{57AF657D-9649-455A-BA66-025744C77EBB}"
 EndProject
