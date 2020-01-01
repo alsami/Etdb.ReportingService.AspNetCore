@@ -3,13 +3,12 @@ using System.Net;
 using Autofac;
 using Etdb.ReportingService.Services;
 using Etdb.ReportingService.Services.Abstractions;
-using Etdb.ReportingService.Services.Abstractions.Models;
 using Microsoft.Extensions.Logging;
 using RedLockNet;
 using RedLockNet.SERedis;
 using RedLockNet.SERedis.Configuration;
 
-namespace Etdb.ReportingService.Modules
+namespace Etdb.ReportingService.Autofac.Modules
 {
     public class ResourceLockingAdapterModule : Module
     {

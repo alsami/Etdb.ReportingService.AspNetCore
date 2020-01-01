@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 using System.Threading.Tasks;
 using Etdb.ReportingService.Services.Abstractions.Enums;
 

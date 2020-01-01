@@ -1,33 +1,25 @@
-using System;
 using Autofac;
-using Autofac.Extensions.FluentBuilder;
-using AutoMapper.Contrib.Autofac.DependencyInjection;
-using Etdb.ReportingService.AutoMapper;
-using Etdb.ReportingService.Cqrs.Abstractions.Commands;
-using Etdb.ReportingService.Cqrs.CommandHandler;
-using Etdb.ReportingService.Modules;
-using Etdb.ReportingService.Services;
-using Etdb.ReportingService.Services.Abstractions;
-using Etdb.ReportingService.Services.Abstractions.Enums;
+using Etdb.ReportingService.Autofac.Configuration;
+using Etdb.ReportingService.Autofac.Extensions;
 using Etdb.ReportingService.Worker;
-using MediatR.Extensions.Autofac.DependencyInjection;
+using Etdb.ServiceBase.DocumentRepository.Abstractions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Azure.ServiceBus;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
 
 namespace Etdb.ReportingService
 {
     public class Startup
     {
         private readonly IConfiguration configuration;
+        private readonly IWebHostEnvironment environment;
 
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IWebHostEnvironment environment)
         {
             this.configuration = configuration;
+            this.environment = environment;
         }
 
         public void ConfigureServices(IServiceCollection services)
@@ -35,6 +27,9 @@ namespace Etdb.ReportingService
             services.AddControllers();
 
             services.AddHostedService<UserRegistrationMessageProcessor>();
+
+            services.Configure<DocumentDbContextOptions>(options =>
+                this.configuration.Bind(nameof(DocumentDbContextOptions), options));
 
             services.Configure<AzureServiceBusConfiguration>(options =>
                 options.ConnectionString = this.configuration.GetConnectionString("AzureServiceBus"));
@@ -54,32 +49,7 @@ namespace Etdb.ReportingService
 
         public void ConfigureContainer(ContainerBuilder containerBuilder)
         {
-            containerBuilder.AddAutoMapper(typeof(TestProfile).Assembly);
-            containerBuilder.AddMediatR(typeof(UserRegistrationStoreCommandHandler).Assembly);
-            
-            new AutofacFluentBuilder(containerBuilder)
-                .AddGenericAsTransient(typeof(AzureServiceBusMessageConsumer<>), typeof(IMessageConsumer<>))
-                .ApplyModule(new ResourceLockingAdapterModule(false));
-
-            containerBuilder.Register<Func<MessageType, IQueueClient>>(outerComponentContext =>
-                {
-                    var innerComponentContext = outerComponentContext.Resolve<IComponentContext>();
-
-                    return messageType =>
-                    {
-                        var options = innerComponentContext.Resolve<IOptions<AzureServiceBusConfiguration>>();
-
-                        return messageType switch
-                        {
-                            MessageType.UserRegistered => new QueueClient(options.Value.ConnectionString,
-                                options.Value.UserRegisteredTopic),
-                            MessageType.UserAuthenticated => new QueueClient(options.Value.ConnectionString,
-                                options.Value.UserAuthenticatedTopic),
-                            _ => throw new ArgumentOutOfRangeException(nameof(messageType))
-                        };
-                    };
-                })
-                .InstancePerDependency();
+           containerBuilder.SetupDependencies(this.environment);
         }
     }
 }

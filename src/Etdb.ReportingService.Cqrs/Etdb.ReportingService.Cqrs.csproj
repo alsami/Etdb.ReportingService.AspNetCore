@@ -9,7 +9,12 @@
       <ProjectReference Include="..\Etdb.ReportingService.Domain\Etdb.ReportingService.Domain.csproj" />
       <ProjectReference Include="..\Etdb.ReportingService.Misc\Etdb.ReportingService.Misc.csproj" />
       <ProjectReference Include="..\Etdb.ReportingService.Presentation\Etdb.ReportingService.Presentation.csproj" />
+      <ProjectReference Include="..\Etdb.ReportingService.Repositories.Abstractions\Etdb.ReportingService.Repositories.Abstractions.csproj" />
       <ProjectReference Include="..\Etdb.ReportingService.Services.Abstractions\Etdb.ReportingService.Services.Abstractions.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="9.0.0" />
     </ItemGroup>
 
 </Project>

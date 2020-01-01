@@ -8,4 +8,10 @@
       <PackageReference Include="AutoMapper" Version="9.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Etdb.ReportingService.Cqrs.Abstractions\Etdb.ReportingService.Cqrs.Abstractions.csproj" />
+      <ProjectReference Include="..\Etdb.ReportingService.Domain\Etdb.ReportingService.Domain.csproj" />
+      <ProjectReference Include="..\Etdb.ReportingService.Presentation\Etdb.ReportingService.Presentation.csproj" />
+    </ItemGroup>
+
 </Project>

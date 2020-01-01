@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Etdb.ReportingService.Autofac\Etdb.ReportingService.Autofac.csproj" />
+      <ProjectReference Include="..\Etdb.ReportingService.AutoMapper\Etdb.ReportingService.AutoMapper.csproj" />
+      <ProjectReference Include="..\Etdb.ReportingService.Repositories\Etdb.ReportingService.Repositories.csproj" />
+      <ProjectReference Include="..\Etdb.ReportingService.Services\Etdb.ReportingService.Services.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.0" />
+      <PackageReference Include="Moq" Version="4.13.1" />
+    </ItemGroup>
+
+</Project>

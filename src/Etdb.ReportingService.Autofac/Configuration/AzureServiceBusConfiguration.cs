@@ -1,4 +1,4 @@
-namespace Etdb.ReportingService
+namespace Etdb.ReportingService.Autofac.Configuration
 {
     public class AzureServiceBusConfiguration
     {

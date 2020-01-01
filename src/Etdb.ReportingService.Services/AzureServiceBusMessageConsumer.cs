@@ -29,7 +29,6 @@ namespace Etdb.ReportingService.Services
             this.queueClient.RegisterMessageHandler(this.Handler, this.ExceptionReceivedHandler);
         }
 
-
         public async ValueTask DisposeAsync()
         {
             if (this.queueClient == null) return;
@@ -46,12 +45,12 @@ namespace Etdb.ReportingService.Services
             try
             {
                 await this.messageHandler(extracted);
-                await this.queueClient!.CompleteAsync(message.CorrelationId);
+                await this.queueClient!.CompleteAsync(message.SystemProperties.LockToken);
             }
             catch (Exception e)
             {
                 this.exceptionHandler(e);
-                await this.queueClient!.DeadLetterAsync(message.CorrelationId);
+                await this.queueClient!.DeadLetterAsync(message.SystemProperties.LockToken);
             }
         }
         

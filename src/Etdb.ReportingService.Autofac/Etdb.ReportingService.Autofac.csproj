@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.1" />
+        <PackageReference Include="Autofac.Extensions.FluentBuilder" Version="2.0.1" />
+        <PackageReference Include="AutoMapper.Contrib.Autofac.DependencyInjection" Version="2.0.1" />
+        <PackageReference Include="Etdb.ServiceBase.DocumentRepository" Version="3.5.0" />
+        <PackageReference Include="MediatR.Extensions.Autofac.DependencyInjection" Version="4.0.0" />
+        <PackageReference Include="Microsoft.Azure.ServiceBus" Version="4.1.1" />
+        <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="3.1.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.0" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\Etdb.ReportingService.AutoMapper\Etdb.ReportingService.AutoMapper.csproj" />
+      <ProjectReference Include="..\Etdb.ReportingService.Cqrs\Etdb.ReportingService.Cqrs.csproj" />
+      <ProjectReference Include="..\Etdb.ReportingService.Repositories\Etdb.ReportingService.Repositories.csproj" />
+      <ProjectReference Include="..\Etdb.ReportingService.Services.Abstractions\Etdb.ReportingService.Services.Abstractions.csproj" />
+      <ProjectReference Include="..\Etdb.ReportingService.Services\Etdb.ReportingService.Services.csproj" />
+    </ItemGroup>
+
+</Project>

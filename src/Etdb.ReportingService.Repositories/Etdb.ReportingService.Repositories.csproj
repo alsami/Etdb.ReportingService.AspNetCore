@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Etdb.ReportingService.Repositories.Abstractions\Etdb.ReportingService.Repositories.Abstractions.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Etdb.ServiceBase.DocumentRepository" Version="3.5.0" />
+    </ItemGroup>
+
+</Project>

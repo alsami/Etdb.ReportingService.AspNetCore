@@ -8,7 +8,6 @@ using Etdb.ReportingService.Services.Abstractions.Models;
 using MediatR;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 
 namespace Etdb.ReportingService.Worker
 {

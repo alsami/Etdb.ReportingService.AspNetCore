@@ -6,21 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.1" />
-    <PackageReference Include="Autofac.Extensions.FluentBuilder" Version="2.0.1" />
-    <PackageReference Include="AutoMapper.Contrib.Autofac.DependencyInjection" Version="2.0.1" />
-    <PackageReference Include="MediatR.Extensions.Autofac.DependencyInjection" Version="4.0.0" />
-    <PackageReference Include="Microsoft.Azure.ServiceBus" Version="4.1.1" />
-    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="3.1.0" />
     <PackageReference Include="Serilog.Extensions.Hosting" Version="3.0.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
     <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Etdb.ReportingService.Autofac\Etdb.ReportingService.Autofac.csproj" />
     <ProjectReference Include="..\Etdb.ReportingService.AutoMapper\Etdb.ReportingService.AutoMapper.csproj" />
     <ProjectReference Include="..\Etdb.ReportingService.Cqrs.Abstractions\Etdb.ReportingService.Cqrs.Abstractions.csproj" />
     <ProjectReference Include="..\Etdb.ReportingService.Cqrs\Etdb.ReportingService.Cqrs.csproj" />
+    <ProjectReference Include="..\Etdb.ReportingService.Repositories.Abstractions\Etdb.ReportingService.Repositories.Abstractions.csproj" />
+    <ProjectReference Include="..\Etdb.ReportingService.Repositories\Etdb.ReportingService.Repositories.csproj" />
     <ProjectReference Include="..\Etdb.ReportingService.Services.Abstractions\Etdb.ReportingService.Services.Abstractions.csproj" />
     <ProjectReference Include="..\Etdb.ReportingService.Services\Etdb.ReportingService.Services.csproj" />
     <ProjectReference Include="..\Etdb.ReportingService.Worker\Etdb.ReportingService.Worker.csproj" />
