@@ -6,6 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Etdb.ServiceBase.Constants" Version="3.5.0" />
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.0" />
     <PackageReference Include="Serilog.Extensions.Hosting" Version="3.0.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
     <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
@@ -14,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Etdb.ReportingService.Autofac\Etdb.ReportingService.Autofac.csproj" />
     <ProjectReference Include="..\Etdb.ReportingService.AutoMapper\Etdb.ReportingService.AutoMapper.csproj" />
+    <ProjectReference Include="..\Etdb.ReportingService.Controllers\Etdb.ReportingService.Controllers.csproj" />
     <ProjectReference Include="..\Etdb.ReportingService.Cqrs.Abstractions\Etdb.ReportingService.Cqrs.Abstractions.csproj" />
     <ProjectReference Include="..\Etdb.ReportingService.Cqrs\Etdb.ReportingService.Cqrs.csproj" />
     <ProjectReference Include="..\Etdb.ReportingService.Repositories.Abstractions\Etdb.ReportingService.Repositories.Abstractions.csproj" />

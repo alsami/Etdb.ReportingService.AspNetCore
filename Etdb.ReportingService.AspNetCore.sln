@@ -55,6 +55,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Etdb.ReportingService.Scaff
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Etdb.ReportingService.Autofac", "src\Etdb.ReportingService.Autofac\Etdb.ReportingService.Autofac.csproj", "{19C353F1-9A14-47A4-8300-0DA11BEBD6D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Etdb.ReportingService.Controllers", "src\Etdb.ReportingService.Controllers\Etdb.ReportingService.Controllers.csproj", "{63DC9B40-6F92-4015-AB44-4F265913382A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -248,6 +250,18 @@ Global
 		{19C353F1-9A14-47A4-8300-0DA11BEBD6D0}.Release|x64.Build.0 = Release|Any CPU
 		{19C353F1-9A14-47A4-8300-0DA11BEBD6D0}.Release|x86.ActiveCfg = Release|Any CPU
 		{19C353F1-9A14-47A4-8300-0DA11BEBD6D0}.Release|x86.Build.0 = Release|Any CPU
+		{63DC9B40-6F92-4015-AB44-4F265913382A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63DC9B40-6F92-4015-AB44-4F265913382A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63DC9B40-6F92-4015-AB44-4F265913382A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{63DC9B40-6F92-4015-AB44-4F265913382A}.Debug|x64.Build.0 = Debug|Any CPU
+		{63DC9B40-6F92-4015-AB44-4F265913382A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{63DC9B40-6F92-4015-AB44-4F265913382A}.Debug|x86.Build.0 = Debug|Any CPU
+		{63DC9B40-6F92-4015-AB44-4F265913382A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63DC9B40-6F92-4015-AB44-4F265913382A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63DC9B40-6F92-4015-AB44-4F265913382A}.Release|x64.ActiveCfg = Release|Any CPU
+		{63DC9B40-6F92-4015-AB44-4F265913382A}.Release|x64.Build.0 = Release|Any CPU
+		{63DC9B40-6F92-4015-AB44-4F265913382A}.Release|x86.ActiveCfg = Release|Any CPU
+		{63DC9B40-6F92-4015-AB44-4F265913382A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{46359836-B647-4FA2-9C1C-2E3AD4902050} = {2A9F14A9-1ECD-4139-A713-AA880BFD2E81}
@@ -265,5 +279,6 @@ Global
 		{1C5F8101-75E5-4C02-9C1D-969B08E9180B} = {2A9F14A9-1ECD-4139-A713-AA880BFD2E81}
 		{35A308B5-D388-4E12-8F6E-142D8E290731} = {2A9F14A9-1ECD-4139-A713-AA880BFD2E81}
 		{19C353F1-9A14-47A4-8300-0DA11BEBD6D0} = {2A9F14A9-1ECD-4139-A713-AA880BFD2E81}
+		{63DC9B40-6F92-4015-AB44-4F265913382A} = {2A9F14A9-1ECD-4139-A713-AA880BFD2E81}
 	EndGlobalSection
 EndGlobal
