@@ -10,5 +10,8 @@ namespace Etdb.ReportingService.Autofac.Extensions
 
         public static bool IsAzure(this IHostEnvironment environment)
             => environment.IsAzureDevelopment() || environment.EnvironmentName.Equals("Azure", StringComparison.InvariantCultureIgnoreCase);
+
+        public static bool IsContinousIntegration(this IHostEnvironment environment)
+            => environment.EnvironmentName.Equals("CI", StringComparison.InvariantCultureIgnoreCase);
     }
 }
