@@ -26,7 +26,8 @@ namespace Etdb.ReportingService
         {
             services.AddControllers();
 
-            services.AddHostedService<UserRegistrationMessageProcessor>();
+            services.AddHostedService<UserRegistrationMessageProcessor>()
+                .AddHostedService<UserAuthenticationMessageProcessor>();
 
             services.Configure<DocumentDbContextOptions>(options =>
                 this.configuration.Bind(nameof(DocumentDbContextOptions), options));
