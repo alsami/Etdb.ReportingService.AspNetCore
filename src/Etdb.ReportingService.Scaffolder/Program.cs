@@ -1,15 +1,12 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Etdb.ReportingService.Autofac.Extensions;
 using Etdb.ReportingService.Scaffolder.Migrations;
-using Etdb.ServiceBase.DocumentRepository;
 using Etdb.ServiceBase.DocumentRepository.Abstractions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MongoDB.Bson;
 using Moq;
 
 namespace Etdb.ReportingService.Scaffolder

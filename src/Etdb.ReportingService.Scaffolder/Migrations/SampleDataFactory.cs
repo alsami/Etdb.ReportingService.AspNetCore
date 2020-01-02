@@ -1,5 +1,4 @@
 using System;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using Etdb.ReportingService.Domain;
 using Etdb.ReportingService.Repositories.Abstractions;
