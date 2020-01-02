@@ -2,6 +2,7 @@
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Etdb.ReportingService.Misc.Exceptions;
 using Etdb.ReportingService.Services.Abstractions;
 using Etdb.ReportingService.Services.Abstractions.Enums;
 using Microsoft.Azure.ServiceBus;
@@ -45,11 +46,13 @@ namespace Etdb.ReportingService.Services
             try
             {
                 await this.messageHandler(extracted);
-                await this.queueClient!.CompleteAsync(message.SystemProperties.LockToken);
             }
-            catch (Exception e)
+            catch (ResourceLockedException)
             {
-                this.exceptionHandler(e);
+                await this.queueClient!.AbandonAsync(message.SystemProperties.LockToken);
+            }
+            catch (Exception)
+            {
                 await this.queueClient!.DeadLetterAsync(message.SystemProperties.LockToken);
             }
         }

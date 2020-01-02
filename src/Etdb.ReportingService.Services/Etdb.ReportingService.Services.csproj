@@ -5,6 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Etdb.ReportingService.Misc\Etdb.ReportingService.Misc.csproj" />
       <ProjectReference Include="..\Etdb.ReportingService.Services.Abstractions\Etdb.ReportingService.Services.Abstractions.csproj" />
     </ItemGroup>
 
